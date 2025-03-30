@@ -1,0 +1,18 @@
+{% extends 'registration/base.html.twig' %}
+
+{% block title %}Step 1: User Information - StreamPlus Registration{% endblock %}
+
+{% block card_title %}Step 1: User Information{% endblock %}
+
+{% block registration_body %}
+    {{ form_start(form, {'attr': {'class': 'needs-validation'}}) }}
+        {{ form_row(form.name) }}
+        {{ form_row(form.email) }}
+        {{ form_row(form.phoneNumber) }}
+        {{ form_row(form.subscriptionType) }}
+
+        <div class="d-flex justify-content-between mt-4">
+            <button type="submit" class="btn btn-primary">Next Step</button>
+        </div>
+    {{ form_end(form) }}
+{% endblock %} 

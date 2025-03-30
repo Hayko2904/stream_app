@@ -1,0 +1,76 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Payment Information - StreamPlus{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/payment-form.css') }}">
+{% endblock %}
+
+{% block body %}
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="mb-0">Payment Information</h2>
+                    </div>
+                    <div class="card-body">
+                        {{ form_start(form, {'attr': {'class': 'needs-validation'}}) }}
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        {{ form_label(form.creditCardNumber) }}
+                                        <div class="input-group">
+                                            {{ form_widget(form.creditCardNumber, {'attr': {'class': 'form-control'}}) }}
+                                            <div class="card-type-icon unknown"></div>
+                                        </div>
+                                        {{ form_errors(form.creditCardNumber) }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        {{ form_label(form.cardExpiration) }}
+                                        {{ form_widget(form.cardExpiration, {'attr': {'class': 'form-control'}}) }}
+                                        {{ form_errors(form.cardExpiration) }}
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        {{ form_label(form.cvv) }}
+                                        {{ form_widget(form.cvv, {'attr': {'class': 'form-control'}}) }}
+                                        {{ form_errors(form.cvv) }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        {{ form_label(form.cardHolderName) }}
+                                        {{ form_widget(form.cardHolderName, {'attr': {'class': 'form-control'}}) }}
+                                        {{ form_errors(form.cardHolderName) }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-4">
+                                <div class="col-md-6">
+                                    <a href="{{ path('app_register_step2') }}" class="btn btn-secondary">Back</a>
+                                </div>
+                                <div class="col-md-6 text-end">
+                                    {{ form_widget(form.submit, {'attr': {'class': 'btn btn-primary'}}) }}
+                                </div>
+                            </div>
+                        {{ form_end(form) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('js/payment-form.js') }}"></script>
+{% endblock %} 

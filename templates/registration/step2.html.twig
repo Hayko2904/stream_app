@@ -1,0 +1,21 @@
+{% extends 'registration/base.html.twig' %}
+
+{% block title %}Step 2: Address Information - StreamPlus Registration{% endblock %}
+
+{% block card_title %}Step 2: Address Information{% endblock %}
+
+{% block registration_body %}
+    {{ form_start(form, {'attr': {'class': 'needs-validation'}}) }}
+        {{ form_row(form.addressLine1) }}
+        {{ form_row(form.addressLine2) }}
+        {{ form_row(form.city) }}
+        {{ form_row(form.postalCode) }}
+        {{ form_row(form.state) }}
+        {{ form_row(form.country) }}
+
+        <div class="d-flex justify-content-between mt-4">
+            <a href="{{ path('app_register_step1') }}" class="btn btn-secondary">Previous Step</a>
+            <button type="submit" class="btn btn-primary">Next Step</button>
+        </div>
+    {{ form_end(form) }}
+{% endblock %} 
