@@ -127,11 +127,6 @@ stream_app/
 
 ## Development
 
-### Running Tests
-```bash
-php bin/phpunit
-```
-
 ### Code Style
 The project follows PSR-12 coding standards. To check code style:
 ```bash
